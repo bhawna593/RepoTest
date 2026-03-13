@@ -1,0 +1,300 @@
+{
+  "info": {
+    "_postman_id": "b2aa2b7b-5b9c-4d40-8f2c-7dc5f5f4c9a1",
+    "name": "Cricket Match Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for Admin and Audience flows of Cricket Match Booking API. Includes sample payloads and query params."
+  },
+  "item": [
+    {
+      "name": "ADMIN",
+      "item": [
+        {
+          "name": "Create Match - Mumbai (23-03-2026)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/admin/matches",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "admin",
+                "matches"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"23-03-2026\", \"cityName\": \"Mumbai\"}"
+            }
+          }
+        },
+        {
+          "name": "Create Match - Delhi (27-03-2026)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/admin/matches",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "admin",
+                "matches"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"27-03-2026\", \"cityName\": \"Delhi\"}"
+            }
+          }
+        },
+        {
+          "name": "Create Match - Chennai (29-03-2026)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/admin/matches",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "admin",
+                "matches"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"29-03-2026\", \"cityName\": \"Chennai\"}"
+            }
+          }
+        },
+        {
+          "name": "Audience List (by Date)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/admin/matches/audience?matchDate=23-03-2026",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "admin",
+                "matches",
+                "audience"
+              ],
+              "query": [
+                {
+                  "key": "matchDate",
+                  "value": "23-03-2026"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Seat Status (by Date)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/admin/matches/seat-status?matchDate=23-03-2026",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "admin",
+                "matches",
+                "seat-status"
+              ],
+              "query": [
+                {
+                  "key": "matchDate",
+                  "value": "23-03-2026"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AUDIENCE",
+      "item": [
+        {
+          "name": "Upcoming Matches",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/audience/matches/upcoming",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "audience",
+                "matches",
+                "upcoming"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Booking (20 passengers - expect max 20 validation)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/audience/bookings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "audience",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"27-03-2026\", \"passengers\": [{\"name\": \"P1\", \"gender\": \"M\", \"age\": 20}, {\"name\": \"P2\", \"gender\": \"F\", \"age\": 21}, {\"name\": \"P3\", \"gender\": \"M\", \"age\": 22}, {\"name\": \"P4\", \"gender\": \"F\", \"age\": 23}, {\"name\": \"P5\", \"gender\": \"M\", \"age\": 24}, {\"name\": \"P6\", \"gender\": \"F\", \"age\": 25}, {\"name\": \"P7\", \"gender\": \"M\", \"age\": 26}, {\"name\": \"P8\", \"gender\": \"F\", \"age\": 27}, {\"name\": \"P9\", \"gender\": \"M\", \"age\": 28}, {\"name\": \"P10\", \"gender\": \"F\", \"age\": 29}, {\"name\": \"P11\", \"gender\": \"M\", \"age\": 30}, {\"name\": \"P12\", \"gender\": \"F\", \"age\": 31}, {\"name\": \"P13\", \"gender\": \"M\", \"age\": 32}, {\"name\": \"P14\", \"gender\": \"F\", \"age\": 33}, {\"name\": \"P15\", \"gender\": \"M\", \"age\": 34}, {\"name\": \"P16\", \"gender\": \"F\", \"age\": 35}, {\"name\": \"P17\", \"gender\": \"M\", \"age\": 36}, {\"name\": \"P18\", \"gender\": \"F\", \"age\": 37}, {\"name\": \"P19\", \"gender\": \"M\", \"age\": 38}, {\"name\": \"P20\", \"gender\": \"F\", \"age\": 39}]}"
+            }
+          }
+        },
+        {
+          "name": "Get Booking by Id (2)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/audience/bookings/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "audience",
+                "bookings",
+                "2"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Validation: Empty Name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/audience/bookings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "audience",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"23-03-2026\", \"passengers\": [{\"name\": \"\", \"gender\": \"M\", \"age\": 25}]}"
+            }
+          }
+        },
+        {
+          "name": "Validation: Empty Passenger List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/audience/bookings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "audience",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"23-03-2026\", \"passengers\": []}"
+            }
+          }
+        },
+        {
+          "name": "Validation: Future Date (01-01-2099)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cricketmatch/audience/bookings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cricketmatch",
+                "audience",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"dateOfMatch\": \"01-01-2099\", \"passengers\": [{\"name\": \"Test User\", \"gender\": \"M\", \"age\": 20}]}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8090",
+      "type": "string"
+    }
+  ]
+}
